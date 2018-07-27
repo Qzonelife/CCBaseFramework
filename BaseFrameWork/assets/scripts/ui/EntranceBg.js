@@ -10,6 +10,7 @@
 
 var loopManager = require("loopManager");
 var uiManager = require("uiManager");
+var resourcesLoader = require("resourcesLoader");
 cc.Class({
     extends: cc.Component,
 
@@ -54,7 +55,7 @@ cc.Class({
             loopManager._instance.removeFromFrame(self);
             self.probarLabel.string = "加载完成";
             self.node.destroy();
-            uiManager._instance.createUI("prefabs/ui/MainMenu",this,function(obj,prefabs){
+            resourcesLoader._instance.createUI("prefabs/ui/MainMenu",this,function(obj,prefabs){
                 uiManager._instance.root.addChild(prefabs);
             });
         }

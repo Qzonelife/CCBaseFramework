@@ -20,8 +20,6 @@ var resourcesLoader = cc.Class({
     createUI(uiName,obj,callBack){
         var self = this;
         //字典中不存在资源
-        zlog.log(uiName);
-        this.resDict.printDictInfo();
         if(!this.resDict.exist(uiName)){
             cc.loader.loadRes(uiName,function(err,prefab){
                 if(prefab!=undefined){
