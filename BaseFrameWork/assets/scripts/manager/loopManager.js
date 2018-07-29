@@ -17,7 +17,14 @@ var loopManager = cc.Class({
     ctor(){
         this.loopDict = new Dictionary();
         this.secondLoopDict = new Dictionary();
+        this.intervalDict = new Dictionary();
         this.timeRecorder = 0;
+    },
+    setInterval(key,obj,delay){
+         
+    },
+    removeInterval(key){
+
     },
     addToFrame:function(key,func){
         this.loopDict.add(key,func);

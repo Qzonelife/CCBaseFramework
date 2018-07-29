@@ -15,7 +15,8 @@ cc.Class({
        txt:{
            type:cc.Label,
            default:null
-       }
+       },
+       value:0
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -25,6 +26,10 @@ cc.Class({
     start () {
 
     },
+    setValue(value){
+        this.value = value;
+        this.setTextInfo(value);
+    },
     setTextInfo(txt){
         this.txt.string = txt;
     },
@@ -33,6 +38,13 @@ cc.Class({
     },
     setPosition(pos){
         this.node.position = pos;
+    },
+    isValueSame(obj){
+        return obj.value == this.value;
+    },
+    upgrade(){
+        this.value = this.value*2;
+        this.setTextInfo(this.value);
     }
     // update (dt) {},
 });

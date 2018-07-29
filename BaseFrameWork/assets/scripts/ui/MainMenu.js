@@ -48,14 +48,12 @@ cc.Class({
         zlog.log("xdis:"+xDis+"ydis:"+yDis);
         if(Math.abs(xDis)>100 || Math.abs(yDis)>100){
             if(Math.abs(xDis)>Math.abs(yDis)){
-                zlog.log(1);
                 if(xDis>0){
                     this.touchToDir(4);
                 }else{
                     this.touchToDir(3);
                 }
             }else{
-                zlog.log(2);
                 if(yDis>0){
                     this.touchToDir(1);
                 }else{
@@ -67,15 +65,18 @@ cc.Class({
 
     //1234,上下左右
     touchToDir(dir){
-        switch(dir){
-            case 1:zlog.log("上");
-                break;
-            case 2:zlog.log("下");
-                break;
-            case 3:zlog.log("左");
-                break;
-            case 4:zlog.log("右");
-                break;
+        // switch(dir){
+        //     case 1:zlog.log("上");
+        //         break;
+        //     case 2:zlog.log("下");
+        //         break;
+        //     case 3:zlog.log("左");
+        //         break;
+        //     case 4:zlog.log("右");
+        //         break;
+        // }
+        if(this.gamePanel!=undefined){
+            this.gamePanel.touchToDir(dir);
         }
     },
     // LIFE-CYCLE CALLBACKS:
@@ -106,6 +107,7 @@ cc.Class({
         }
     },
     startGameLogic(){
+        this.gamePanel.startGame();
         zlog.log("startGameLogic~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
     // update (dt) {},

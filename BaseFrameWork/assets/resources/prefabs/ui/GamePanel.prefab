@@ -435,7 +435,9 @@
     "container": {
       "__id__": 12
     },
-    "mapArray": []
+    "mapArray": [],
+    "startX": 0,
+    "startY": 0
   },
   {
     "__type__": "cc.PrefabInfo",
